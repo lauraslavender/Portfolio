@@ -2,7 +2,7 @@
 const box = document.getElementById("lightbox");
 if (box) {
   const boxImg = box.querySelector("img");
-  document.querySelectorAll(".cover img, .full img, .pair img, .split img, .quad img").forEach((img) => {
+  document.querySelectorAll(".cover img, .full img, .pair img, .split img, .quad img, .before img, .strip img, .browser img, .trio img, .evolve img").forEach((img) => {
     img.addEventListener("click", () => {
       boxImg.src = img.src;
       boxImg.alt = img.alt;

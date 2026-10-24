@@ -1,26 +1,19 @@
-# Portfolio
+# Laura Phillips — Portfolio
 
-Plain HTML/CSS. No build step.
+Plain HTML/CSS. No build step. Live at https://lauraslavender.vercel.app/
 
-## Editing
-- **Text:** open `index.html` and change the words. Comments marked `EDIT` / `To add a project` show where.
-- **Projects:** each project is its own page in `projects/`. Copy `projects/project-template.html`, rename it (e.g. `doctolib.html`), and fill it in using the blocks inside (cover, text, full image, two images, video). Then on `index.html`, point a card's `href` at it and set its cover image and title. Delete project-1…6 once you've replaced them.
-- **Images:** drop your images into `images/`, then change `src="images/project-1.svg"` to your file name, e.g. `images/my-poster.jpg`. Landscape images around 1600px wide work best (keep them under ~500 KB).
-- **Colours/fonts:** change the variables at the top of `style.css`.
+## What's where
+- `index.html` — homepage: intro, 6 featured projects, About, contact.
+- `work.html` — the All work list (every project, newest first).
+- `projects/` — one page per project. `project-template.html` is a blank starting point.
+- `images/` — all images. Cards use `card-*.jpg` where there is a dedicated cover.
+- `style.css` — colours and fonts are the variables at the top.
 
-## Preview on your computer
-Double-click `index.html` to open it in your browser.
+## Common edits
+- **Change text:** open the file on GitHub, click the pencil icon, edit the words between the tags, Commit changes.
+- **Change featured projects:** in `index.html`, edit the six `<a class="project">` blocks.
+- **Add a project:** copy `projects/project-template.html`, rename it, fill it in, then add a row to `work.html`.
+- **Add your CV:** upload your PDF to the main folder as `cv.pdf`, then in `index.html` remove the `<!--` and `-->` around the "Download CV" line.
 
-## Put it online (GitHub + Vercel)
-1. Make a free account at github.com.
-2. Click **+ → New repository**, name it `portfolio`, set it to Public, click **Create repository**.
-3. On the next page click **uploading an existing file**, drag in *everything inside* this folder (index.html, style.css, script.js, README.md, the images and projects folders), then click **Commit changes**.
-4. Go to vercel.com → **Sign up with GitHub**.
-5. Click **Add New → Project**, pick `portfolio`, click **Import**, then **Deploy** (leave all settings as they are — Framework Preset: "Other").
-6. You get a link like `portfolio-xyz.vercel.app`. Done.
-
-## Updating later
-Edit or upload files on GitHub (open the file → pencil icon, or **Add file → Upload files**) and commit. Vercel redeploys automatically within a minute.
-
-## Custom domain (optional)
-In Vercel: Project → **Settings → Domains** → add your domain and follow the DNS instructions.
+## Updating the live site
+Upload or edit files on GitHub and commit. Vercel redeploys automatically within a minute.
