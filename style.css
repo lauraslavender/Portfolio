@@ -154,3 +154,8 @@ figure figcaption { margin-top: 10px; color: var(--muted); font-size: .9rem; max
   .split { grid-template-columns: 1fr; gap: 24px; }
   .chapter { margin-top: 64px; }
 }
+
+/* Four images in a row (e.g. a poster series) */
+.quad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+.quad img { border-radius: 4px; cursor: zoom-in; }
+@media (max-width: 720px) { .quad { grid-template-columns: 1fr 1fr; } }
