@@ -159,3 +159,34 @@ figure figcaption { margin-top: 10px; color: var(--muted); font-size: .9rem; max
 .quad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
 .quad img { border-radius: 4px; cursor: zoom-in; }
 @media (max-width: 720px) { .quad { grid-template-columns: 1fr 1fr; } }
+
+/* For low-resolution images: show them no bigger than their real size so they stay sharp */
+.small-img img { max-width: 960px; margin: 0 auto; }
+.small-img figcaption { max-width: 960px; margin-left: auto; margin-right: auto; }
+
+/* ===== Badoo brand board, rebuilt in code so it stays sharp ===== */
+@font-face { font-family: "Urbanist"; font-weight: 400; src: url(fonts/urbanist-latin-400-normal.woff2) format("woff2"); font-display: swap; }
+@font-face { font-family: "Urbanist"; font-weight: 600; src: url(fonts/urbanist-latin-600-normal.woff2) format("woff2"); font-display: swap; }
+@font-face { font-family: "Urbanist"; font-weight: 500; src: url(fonts/urbanist-latin-500-normal.woff2) format("woff2"); font-display: swap; }
+.brand-board {
+  container-type: inline-size; position: relative; aspect-ratio: 16 / 9; margin-bottom: 32px;
+  font-family: "Urbanist", var(--sans); border-radius: 4px; overflow: hidden; background: #fff;
+}
+.brand-board > div { position: absolute; display: flex; align-items: center; justify-content: center; }
+.bb-logo-dark  { left: 0; top: 0; width: 50.5%; height: 40%; background: #574c9a; }
+.bb-logo-light { left: 50.5%; top: 0; width: 49.5%; height: 40%; background: #fff; }
+.bb-logo-dark img, .bb-logo-light img { width: 61%; }
+.bb-band { left: 0; width: 50.5%; height: 15.4%; font-size: 3.05cqw; font-weight: 600; letter-spacing: .01em; }
+.bb-band:nth-of-type(3) { top: 40%;   background: #8eccbf; color: #29989a; }
+.bb-band:nth-of-type(4) { top: 55.4%; background: #efcab0; color: #674a96; }
+.bb-band:nth-of-type(5) { top: 70.8%; background: #cdd5ec; color: #674a96; }
+.bb-band:nth-of-type(6) { top: 86.2%; height: 13.8%; background: #574c9a; color: #fff; }
+.bb-icon { left: 50.5%; top: 40%; width: 17.4%; height: 30.9%; background: #574c9a; }
+.bb-icon img { width: 72%; }
+.bb-text { left: 67.9%; top: 40%; width: 32.1%; height: 30.9%; background: #f5f5f5; color: #1a1a1a;
+  font-size: 1.75cqw; line-height: 1.3; padding: 0 3.3cqw; justify-content: flex-start !important; }
+.bb-swatches { left: 50.5%; top: 70.9%; width: 49.5%; height: 29.1%; flex-direction: column; gap: 2.2cqw; }
+.bb-swatches .row { display: flex; gap: 2.6cqw; align-items: center; }
+.bb-swatches .row span { display: block; border-radius: 50%; }
+.bb-swatches .big span { width: 6cqw; height: 6cqw; }
+.bb-swatches .small span { width: 3cqw; height: 3cqw; margin: 0 1.5cqw; }
