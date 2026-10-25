@@ -368,3 +368,26 @@ nav a.lang:hover { border-color: var(--accent); }
 }
 nav a { white-space: nowrap; }
 @media (max-width: 350px) { .logo img { height: 32px; } nav { gap: 9px; } nav a { font-size: .76rem; } nav a.lang { padding: 2px 7px; } }
+/* Language switch: round flag */
+nav a.lang { display: inline-flex; padding: 0; border: 0; border-radius: 50%; line-height: 0; }
+nav a.lang img { width: 26px; height: 26px; border-radius: 50%; display: block; box-shadow: 0 0 0 1px var(--line); transition: transform .2s, box-shadow .2s; }
+nav a.lang:hover img { transform: scale(1.08); box-shadow: 0 0 0 2px var(--accent); }
+@media (max-width: 480px) { nav a.lang img { width: 24px; height: 24px; } }
+@media (max-width: 350px) { nav a.lang { padding: 0; } nav a.lang img { width: 22px; height: 22px; } }
+/* Rosie the cat (homepage footer) */
+.rosie { max-width: 1200px; margin: 72px auto 0; padding: 0 24px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.rosie-track { position: relative; height: 112px; }
+.rosie-cat-wrap, .rosie-ball-wrap { position: absolute; left: 0; bottom: 0; will-change: transform; }
+.rosie-cat { display: block; width: 168px; height: auto; margin-bottom: -6px; }
+.rosie-ball { display: block; width: 20px; height: 20px; margin-bottom: 6px; }
+.rosie-cat .r-leg { transform-box: fill-box; transform-origin: 50% 8%; }
+.rosie-cat .r-tail { transform-box: fill-box; transform-origin: 100% 100%; animation: rosie-tail 2.6s ease-in-out infinite; }
+.rosie.walking .r-leg-b1, .rosie.walking .r-leg-f2 { animation: rosie-leg var(--step, .5s) ease-in-out infinite; }
+.rosie.walking .r-leg-b2, .rosie.walking .r-leg-f1 { animation: rosie-leg var(--step, .5s) ease-in-out infinite reverse; }
+.rosie.walking .rosie-cat { animation: rosie-bob calc(var(--step, .5s) / 2) ease-in-out infinite; }
+@keyframes rosie-leg { 0%, 100% { transform: rotate(13deg); } 50% { transform: rotate(-13deg); } }
+@keyframes rosie-tail { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-8deg); } }
+@keyframes rosie-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -1.5px; } }
+.rosie + footer { padding-top: 28px; }
+@media (max-width: 520px) { .rosie { margin-top: 48px; } .rosie-track { height: 86px; } .rosie-cat { width: 124px; } .rosie-ball { width: 16px; height: 16px; } }
+@media (prefers-reduced-motion: reduce) { .rosie-cat .r-tail { animation: none; } }
