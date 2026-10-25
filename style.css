@@ -318,3 +318,17 @@ footer::before { content: ""; width: 18px; height: 18px; background: url(favicon
   nav a { margin-left: 0; font-size: .88rem; }
 }
 @media (max-width: 380px) { nav a[href="#experience"] { display: none; } }
+
+/* Breathing room when a section heading is followed directly by images */
+.chapter + :not(.text-block) { margin-top: 40px; }
+.chapter { padding-top: 24px; }
+
+/* Better line breaks: no lonely last words, balanced headings */
+p, li, figcaption, dd { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
+
+/* Light-background artwork: show it on a white card so its edges read against the lilac */
+.framed img { background: #fff; padding: 14px; border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(31,22,51,.05), 0 10px 30px rgba(31,22,51,.07); }
+.strip.framed img { padding: 8px; }
+.nw { white-space: nowrap; }
+.split .hearts { margin: 0; gap: 16px; }
