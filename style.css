@@ -380,15 +380,13 @@ nav a.lang:hover img { transform: scale(1.08); box-shadow: 0 0 0 2px var(--accen
 .rosie-cat-wrap, .rosie-ball-wrap { position: absolute; left: 0; bottom: 0; will-change: transform; }
 .rosie-cat { display: block; width: 168px; height: auto; margin-bottom: -6px; }
 .rosie-ball { display: block; width: 20px; height: 20px; margin-bottom: 6px; }
-.rosie-cat .r-leg, .rosie-cat .r-low { transform-box: view-box; }
+.rosie-cat .r-leg { transform-box: view-box; }
 .rosie-cat .r-tail { transform-box: fill-box; transform-origin: 100% 100%; animation: rosie-tail 2.6s ease-in-out infinite; }
 .rosie.walking .r-leg { animation: rosie-up var(--step, .5s) ease-in-out infinite; }
-.rosie.walking .r-low { animation: rosie-low var(--step, .5s) ease-in-out infinite; }
-.rosie.walking .r-leg-b2, .rosie.walking .r-leg-f1, .rosie.walking .r-leg-b2 .r-low, .rosie.walking .r-leg-f1 .r-low { animation-delay: calc(var(--step, .5s) * -0.5); }
+.rosie.walking .r-leg-b2, .rosie.walking .r-leg-f1 { animation-delay: calc(var(--step, .5s) * -0.5); }
 .rosie.walking .rosie-cat { animation: rosie-bob calc(var(--step, .5s) / 2) ease-in-out infinite; }
 .rosie-cat .r-hs { display: none; }
 @keyframes rosie-up { 0%, 100% { transform: rotate(16deg); } 50% { transform: rotate(-16deg); } }
-@keyframes rosie-low { 0% { transform: rotate(0deg); } 18% { transform: rotate(42deg); } 40% { transform: rotate(8deg); } 50%, 100% { transform: rotate(0deg); } }
 @keyframes rosie-tail { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-8deg); } }
 @keyframes rosie-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -1.5px; } }
 .rosie + footer { padding-top: 28px; }
