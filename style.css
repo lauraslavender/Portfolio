@@ -332,3 +332,39 @@ h1, h2, h3 { text-wrap: balance; }
 .strip.framed img { padding: 8px; }
 .nw { white-space: nowrap; }
 .split .hearts { margin: 0; gap: 16px; }
+
+/* Phone fixes: let fact strips and card captions wrap instead of pushing the page sideways */
+.facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.facts > div { min-width: 0; }
+.project .card-caption { flex-wrap: wrap; row-gap: 2px; }
+@media (max-width: 720px) {
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project span { white-space: normal; }
+}
+
+@media (max-width: 520px) {
+  .facts { grid-template-columns: 1fr; gap: 10px; }
+  .facts > div { display: grid; grid-template-columns: 90px 1fr; align-items: baseline; gap: 12px; }
+  .facts dd { margin-top: 0; }
+}
+.row { grid-template-columns: 120px minmax(0, 1fr) auto 76px; }
+@media (max-width: 720px) { .row { grid-template-columns: 88px minmax(0, 1fr); } }
+.chapter { flex-wrap: wrap; row-gap: 4px; }
+.chapter h2 { min-width: 0; }
+.strip { max-width: 100%; }
+@media (max-width: 520px) { .project-hero h1 { font-size: clamp(1.75rem, 8.6vw, 2.4rem); } .hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); } }
+@media (min-width: 521px) and (max-width: 1099px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.text-block, .split { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 720px) { .text-block, .split { grid-template-columns: minmax(0, 1fr); } }
+
+/* Language switch */
+nav a.lang { font-size: .78rem; font-weight: 600; letter-spacing: .08em; border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; color: var(--accent); }
+nav a.lang:hover { border-color: var(--accent); }
+@media (max-width: 480px) {
+  nav { gap: 12px; }
+  nav a { font-size: .82rem; }
+  nav a[href$="#experience"] { display: none; }
+}
+nav a { white-space: nowrap; }
+@media (max-width: 350px) { .logo img { height: 32px; } nav { gap: 9px; } nav a { font-size: .76rem; } nav a.lang { padding: 2px 7px; } }
